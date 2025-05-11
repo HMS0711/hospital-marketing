@@ -13,18 +13,20 @@ const departments = [
 
 export default function MainPage() {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
+  const [loggedIn, setLoggedIn] = useState<boolean | null>(null);
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('user');
     if (!isLoggedIn) {
       router.replace('/login');
     } else {
-      setLoading(false);
+      setLoggedIn(true);
     }
   }, []);
 
-  if (loading) return null; // 리디렉션 전엔 아무것도 보여주지 않음
+  if (loggedIn === null) {
+    return <div style={{ color: 'white', padding: '2rem' }}>로딩중...</div>;
+  }
 
   return (
     <div className={styles.layout}>
