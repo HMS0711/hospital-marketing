@@ -1,5 +1,10 @@
-// /app/layout.tsx
+// app/layout.tsx
 import './globals.css';
+
+export const metadata = {
+  title: 'YM COMPANY',
+  description: '부서 선택 시스템',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
