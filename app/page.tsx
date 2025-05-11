@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './Main.module.css';
 
@@ -12,6 +13,13 @@ const departments = [
 
 export default function MainPage() {
   const router = useRouter();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('user'); // ✅ 로그인 여부 판단 기준
+    if (!isLoggedIn) {
+      router.replace('/login'); // 로그인 안 되어 있으면 로그인 페이지로 이동
+    }
+  }, []);
 
   return (
     <div className={styles.layout}>
