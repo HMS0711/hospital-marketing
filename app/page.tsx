@@ -25,7 +25,11 @@ export default function MainPage() {
   }, []);
 
   if (loggedIn === null) {
-    return <div style={{ color: 'white', padding: '2rem' }}>로딩중...</div>;
+    return (
+      <div style={{ height: '100vh', background: '#000', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        로딩 중입니다...
+      </div>
+    );
   }
 
   return (
