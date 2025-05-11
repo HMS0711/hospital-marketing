@@ -1,0 +1,7 @@
+/* Tailwind 제거 후 순수 CSS로 초기화 */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f9fafb;
+  color: #111;
+}

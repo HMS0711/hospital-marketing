@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1f2937;
+  color: white;
+  padding: 2rem 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+
+.hint {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  color: #9ca3af;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.menu li:hover {
+  color: #60a5fa;
+}
+
+.main {
+  flex: 1;
+  background-color: #111827;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ 2열 고정 */
+  gap: 2rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.card {
+  background-color: #1f2937;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  background-color: #374151;
+  transform: translateY(-2px);
+}
+
+/* ✅ 선택된 카드 강조 */
+.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+}
+
+.welcome {
+  font-size: 1.25rem;
+}

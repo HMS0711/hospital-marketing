@@ -1,0 +1,39 @@
+.sidebar {
+  width: 240px;
+  background-color: #1f2937;
+  color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color: #e5e7eb;
+  transition: color 0.2s ease;
+}
+
+.menuItem:hover {
+  color: white;
+}
+
+.divider {
+  border-top: 1px solid #374151;
+  margin: 1.5rem 0;
+}
