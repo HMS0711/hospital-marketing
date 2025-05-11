@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './Main.module.css';
+import { useEffect, useState } from 'react';
 
 const departments = [
   { key: 'viral', label: '카페 바이럴', icon: '👩‍👧' },
@@ -25,37 +24,30 @@ export default function MainPage() {
   }, []);
 
   if (loggedIn === null) {
-    return (
-      <div style={{ height: '100vh', background: '#000', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        로딩 중입니다...
-      </div>
-    );
+    return <div style={{ color: 'white', textAlign: 'center', paddingTop: '100px' }}>로딩 중...</div>;
   }
 
   return (
-    <div className={styles.layout}>
-      <aside className={styles.sidebar}>
-        <h2 className={styles.logo}>YM COMPANY</h2>
-        <p className={styles.hint}>부서를 선택해주세요</p>
-      </aside>
-
-      <main className={styles.main}>
-        <h1 className={styles.heading}>부서를 선택해주세요</h1>
-        <div className={styles.cardGrid}>
-          {departments.map((dept) => (
-            <div
-              key={dept.key}
-              className={styles.card}
-              onClick={() => router.push(`/main/${dept.key}`)}
-            >
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>
-                {dept.icon}
-              </div>
-              {dept.label}
-            </div>
-          ))}
-        </div>
-      </main>
+    <div style={{ padding: '2rem', color: 'white', background: '#111', height: '100vh' }}>
+      <h1>부서를 선택해주세요</h1>
+      <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+        {departments.map((dept) => (
+          <div
+            key={dept.key}
+            onClick={() => router.push(`/main/${dept.key}`)}
+            style={{
+              border: '1px solid white',
+              padding: '1rem',
+              cursor: 'pointer',
+              minWidth: '120px',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{dept.icon}</div>
+            {dept.label}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
